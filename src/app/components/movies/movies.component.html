@@ -1,0 +1,32 @@
+<div class="flex flex-wrap gap-3 p-5 justify-content-center">
+  @for (movie of movies; track $index) {
+  <mat-card class="card" appearance="outlined">
+    <mat-card-header>
+      <mat-card-title class="text-white pb-2">{{ movie.title }}</mat-card-title>
+      <mat-card-subtitle class="pb-2"
+        ><label class="text-color4 font-bold">
+          {{ movie.genre }}
+        </label></mat-card-subtitle
+      >
+    </mat-card-header>
+    <div class="flex justify-content-center align-items-center">
+      <img
+        height="100"
+        mat-card-image
+        src="https://assets.entrepreneur.com/content/3x2/2000/20190625113800-Examples2-of-Film-Related-Business-Ideas-4000pxW-X-2670pxH-copy.jpeg?format=pjeg&auto=webp&crop=4:3"
+        alt="Photo of a Shiba Inu"
+      />
+    </div>
+    <mat-card-content>
+      <p class="text-white p-2">
+        {{ movie.description }}
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      @if (movie.isPremiere) {
+      <button mat-flat-button>Premiere</button>
+      }
+    </mat-card-actions>
+  </mat-card>
+  }
+</div>

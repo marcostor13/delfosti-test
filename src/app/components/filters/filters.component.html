@@ -1,0 +1,19 @@
+<div class="flex align-items-center justify-content-end gap-3 w-full py-3">
+  <mat-form-field class="example-full-width">
+    <mat-label>Buscar película</mat-label>
+    <input
+      (ngModelChange)="onChangeFilters()"
+      [(ngModel)]="keyword"
+      matInput
+      placeholder="Buscar por nombre o descripción"
+    />
+  </mat-form-field>
+  <mat-form-field class="mr-5">
+    <mat-label>Género</mat-label>
+    <mat-select [(ngModel)]="genre" (ngModelChange)="onChangeFilters()">
+      @for (genre of genres; track $index) {
+      <mat-option [value]="genre">{{ genre }}</mat-option>
+      }
+    </mat-select>
+  </mat-form-field>
+</div>

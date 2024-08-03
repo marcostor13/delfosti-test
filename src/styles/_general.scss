@@ -1,0 +1,89 @@
+@use "sass:map";
+@import 'variables';
+@import url('https://fonts.googleapis.com/css2?family=Krub:wght@200;300;400;500;700&family=Roboto:ital,wght@0,300;0,400;0,500;0,600;0,700;1,100&family=Ubuntu:wght@300;400;500;700&display=swap');
+$breakpoints: (
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+);
+
+* {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  transition: all 200ms ease-in;
+  outline: none !important;
+}
+
+.font-secondary{
+  font-family: 'Krub', sans-serif;
+}
+
+html,
+body {
+  min-width: 100vw;
+  max-width: 100vw !important;
+  overflow-x: hidden;
+  margin: 0;
+}
+
+.container-eventuz {
+  max-width: 1680px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.roboto {
+  font-family: $roboto;
+  font-weight: 400;
+  font-size: 15px;
+  outline: none !important;
+}
+
+@for $i from 1 through 27 {
+  .bg-color#{$i} {
+    background-color: map.get($color, color+$i)!important;
+  }
+}
+
+@for $i from 1 through 27 {
+  .text-color#{$i} {
+    color: map.get($color, color+$i);
+  }
+}
+
+@for $i from 1 through 9 {
+  .font-#{$i*100} {
+    font-weight: $i*100;
+  }
+}
+
+@for $i from 1 through 100 {
+  .f-#{$i} {
+    font-size: #{$i}px;
+  }
+
+  @each $size, $width in $breakpoints {
+    .#{$size}-f-#{$i} {
+      @media (min-width: $width) {
+        font-size: #{$i}px;
+      }
+    }
+  }
+}
+
+@for $i from 1 through 200 {
+  .lh-#{$i} {
+    line-height: #{$i * 1%};
+  }
+}
+
+.image {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.cursor {
+  cursor: pointer;
+}

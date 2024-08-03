@@ -1,0 +1,14 @@
+@use "sass:map";
+
+$color: (
+  "color1": #121212,
+  "color2": #2e2e2e,
+  "color3": #FFFFFF,
+  "color4": #38b6ff,
+  "color5": #3B82F6,
+  "color6": #292929,
+);
+
+$progress-bar-color: linear-gradient(#ff4600, #ff9200);
+$progress-bar-bg: #282727;
+$roboto: 'Roboto';

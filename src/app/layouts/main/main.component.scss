@@ -1,0 +1,7 @@
+@use "sass:map";
+@import './../../../styles/variables.scss';
+
+.menu{
+    min-width: 200px;
+    border-right: .5px solid map.get($color, color2);
+};

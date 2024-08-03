@@ -1,0 +1,38 @@
+@use "sass:map";
+@import './../../../styles/variables.scss';
+
+::ng-deep {
+    *{
+        color: map.get($color, color3);
+    }
+    .p-panelmenu-header-content{
+        border:none;
+        background: map.get($color, color4);
+        
+    }
+    .p-panelmenu-content{
+        background: none;
+        border: none;
+        color: map.get($color, color3)
+    }
+
+    .p-panelmenu .p-panelmenu-content .p-menuitem:not(.p-highlight):not(.p-disabled).p-focus > .p-menuitem-content:hover {
+        color: white !important;
+        background: red !important;
+      }
+    .p-panelmenu .p-panelmenu-content .p-menuitem:not(.p-highlight):not(.p-disabled).p-focus > .p-menuitem-content {
+    color: white !important;
+    background: red !important;
+    }
+
+    .p-panelmenu .p-panelmenu-content .p-menuitem:not(.p-highlight):not(.p-disabled).p-focus > .p-menuitem {
+        color: white !important;
+        background: red !important;
+        }
+
+    .p-panelmenu .p-panelmenu-content .p-menuitem:hover{
+        color: white !important;
+        background: green !important;
+    }
+}
+
